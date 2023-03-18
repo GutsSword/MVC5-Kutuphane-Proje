@@ -1,0 +1,29 @@
+﻿@using MVC5_Proje1.Models.Entity
+@model List<TBL_Kitap>
+@{
+    ViewBag.Title = "YazarKitap";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<br />
+<h2 style="color:red">@ViewBag.d1 Kitapları</h2>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>Kitap ID</th>
+        <th>Kitap Adı</th>
+        <th>Durum</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.Kitapid</td>
+        <td>@x.Kitapad</td>
+        <td>@x.Durum</td>
+    </tr>
+
+    }
+
+</table>
+

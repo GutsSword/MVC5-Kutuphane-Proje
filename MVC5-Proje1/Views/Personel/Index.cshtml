@@ -1,0 +1,27 @@
+﻿@using MVC5_Proje1.Models.Entity;
+@model List<TBL_Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Personel Sayfası</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Personel ID</th>
+        <th>Personel Ad Soyad</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.Personelid</td>
+        <td>@x.PersonelAdSoyad</td>
+        <td><a href="/Personel/PersonelSil/@x.Personelid" class="btn btn-danger" onclick="return confirm('Silme işlemini onaylıyor musun?')" > Sil </a> </td>
+        <td><a href="/Personel/PersonelGetir/@x.Personelid" class="btn btn-primary"> Güncelle </a> </td>
+    </tr>
+    }
+</table> 
+<a href="~/Personel/PersonelEkle" class="btn btn-primary">Personel Ekle</a>

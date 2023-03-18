@@ -1,0 +1,42 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Kitap
+
+    @{
+        ViewBag.Title = "KitapGetir";
+        Layout = "~/Views/Shared/Layout2.cshtml";
+    }
+
+    <h2>Kitap Güncelleme Sayfası</h2>
+
+    @using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+    {
+    <div class="form-group">
+        <div style="margin-top:20px;"></div>
+        <label>Kitap ID</label>
+        @Html.TextBoxFor(x => x.Kitapid, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Kitapad, new { @class = "form-control" })
+        <br />
+        <label>Kategorisi</label>
+        @Html.DropDownListFor(x => x.TBL_Kategori.Kategoriid, (List<SelectListItem>)ViewBag.k, new { @class = "form-control" })
+        <br />
+        <label>Yazar</label>
+        @Html.DropDownListFor(x => x.TBL_Yazar.Yazarid, (List<SelectListItem>)ViewBag.yazar, new { @class = "form-control" })
+        <br />
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.Basımyıl, new { @class = "form-control" })
+        <br />
+        <label>Yayın Evi</label>
+        @Html.TextBoxFor(x => x.Yayınevi, new { @class = "form-control" })
+        <br />
+        <label>Sayfa</label>
+        @Html.TextBoxFor(x => x.Kitapsayfa, new { @class = "form-control" })
+        <br />
+        <label>Durum</label>
+        @Html.TextBoxFor(x=>x.Durum,new {@class="form-control" })
+        <br />
+    </div>
+        <div>
+            <button class="btn btn-primary" style="background-color:darkslategrey;color:white;" id="btn">Kitap Bilgisini Güncelle</button>
+        </div>
+    }

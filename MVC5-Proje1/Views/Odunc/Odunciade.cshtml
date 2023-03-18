@@ -1,0 +1,41 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Hareket
+@{
+    ViewBag.Title = "Odunciade";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>İade Sayfası</h2>
+
+@using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
+{
+<div class="form-group">
+    <div style="margin-top:20px;"></div>
+    <label>Kitap ID</label>
+    @Html.TextBoxFor(x => x.Hareketid, new { @class = "form-control" })
+    <br />
+    <label>Kitap Adı</label>
+    @Html.TextBoxFor(x => x.TBL_Kitap.Kitapad, new { @class = "form-control" })
+    <br />
+    <label>Üye</label>
+    @Html.TextBoxFor(x => x.TBL_Uye.Uyead, new { @class = "form-control" })
+    <br />
+    <label>Perrsonel</label>
+    @Html.TextBoxFor(x => x.TBL_Personel.PersonelAdSoyad, new { @class = "form-control" })
+    <br />
+    <label>Alış Tarihi</label>
+    @Html.TextBoxFor(x => x.AlısTarihi, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>Veriş Tarihi</label>
+    @Html.TextBoxFor(x => x.iadetarihi, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>Teslim Tarihi</label>
+    <input type="text" class="form-control" name="uyegetirtarih" value="@DateTime.Now.ToShortDateString()" />
+    <br />
+    <label>Gecikme Süresi</label>
+    <input type="text" class="form-control" id="gecikme" value="@ViewBag.data" />
+    <br />
+</div>
+    <div>
+        <button class="btn btn-primary" style="background-color:darkslategrey;color:white;" id="btn">Ödünç Kitabı Geri Al</button>
+    </div>
+}

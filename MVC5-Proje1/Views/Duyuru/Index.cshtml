@@ -1,0 +1,33 @@
+﻿@using MVC5_Proje1.Models.Entity
+@model List<TBL_DUYURULAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>DUYURU SAYFASI</h2>
+
+<table class="table table-bordered">
+    <th>İçerik</th>
+    <th>İşlem</th>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img class="media-object" style="width:60px" src="~/admin.jfif">
+                    </div>
+                    <div class="media-body">
+                        @Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")
+                       <b><br/><a href="/Duyuru/DuyuruDetay/@x.id" style="color:#363636">@x.Kategori</a></b>
+                    </div>
+                </div>
+            </td>
+            <td><a href="/Duyuru/DuyuruGuncelle/@x.id" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Duyuru/DuyuruSil/@x.id" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Duyuru/DuyuruEkle" class="btn btn-primary">Duyuru Ekle</a>

@@ -1,0 +1,48 @@
+﻿@using MVC5_Proje1.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBL_Uye>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Üye Sayfası</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Üye ID</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Mail</th>
+        <th>Kullanıcı Adı</th>
+        <th>Kullanıcı Şifre</th>
+        <th>Telefon</th>
+        <th>Okulu</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.Uyeid</td>
+        <td>@x.Uyead</td>
+        <td>@x.Uyesoyad</td>
+        <td>@x.Uyemail</td>
+        <td>@x.Uyekullanıcıadı</td>
+        <td>@x.Uyekullanıcısifre</td>
+        <td>@x.Uyetelefon</td>
+        <td>@x.UyeOkul</td>
+        <td>@Html.ActionLink("Sil", "UyeSil", new { id = x.Uyeid }, new { @class = "btn btn-danger", onclick = "return confirm('SİLMEK İSTEDİĞİNE EMİN MİSİN?')" }) </td>
+        <td><a href="/Uye/UyeGuncelle/@x.Uyeid" class="btn btn-primary">Güncelle</a></td>
+        <td><a href="/Uye/UyeGecmis/@x.Uyeid" class="btn btn-warning">Kitap Geçmişi</a></td>
+    </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}))
+
+<a href="/Uye/UyeEkle/" class="btn btn-default" style="color:white; background-color:darkslategrey">Yeni Üye Ekle</a>
+

@@ -1,0 +1,43 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Hareket
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Ödünç Verme Sayfası</h2>
+
+<form method="post">
+    <div style="margin-top:15px;">
+        <div>
+            <br />
+            <label>Üye ID</label>
+            @*@Html.TextBoxFor(x => x.Alanuye, new { @class = "form-control" })*@
+            @Html.DropDownListFor(k => k.TBL_Uye.Uyeid, (List<SelectListItem>)ViewBag.d1, new { @class = "form-control" })
+        </div>
+        <div>
+            <br />
+            <label>Kitap ID</label>
+            @*@Html.TextBoxFor(x => x.Alınankitap, new { @class = "form-control" })*@
+            @Html.DropDownListFor(k => k.TBL_Kitap.Kitapid, (List<SelectListItem>)ViewBag.d2, new { @class = "form-control" })
+        </div>
+        <div>
+            <br />
+            <label>Personel ID</label>
+            @*@Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })*@
+            @Html.DropDownListFor(k=>k.TBL_Personel.Personelid,(List<SelectListItem>)ViewBag.d3,new {@class="form-control" })
+        </div>
+        <div>
+            <br />
+            <label>Kitap Alış Tarihi</label>
+            <input type="text" class="form-control" name="AlısTarihi" value="@DateTime.Now.ToShortDateString()" />
+        </div>
+        <div>
+            <br />
+            <label>Kitap İade Tarihi</label>
+            <input type="text" class="form-control" name="iadetarihi" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+        </div>
+        <br />
+        <button class="btn btn-primary" onclick="return confirm('Devam et?')">Kitap Ödünç Ver</button>
+        <input type="hidden" value="False" name="islemdurum" />
+    </div>
+</form>

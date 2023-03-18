@@ -1,0 +1,38 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Uye
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Üye Ekleme Sayfası</h2> <br />
+<form class="form-group" method="post">
+    <div style="margin-top:20px;"></div>
+    <div>
+        <div>
+            <label>Adı</label>
+            @Html.TextBoxFor(x => x.Uyead, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Uyead, "", new { @style = "color:red;" }) <br />
+        </div>
+        <label>Soyadı</label>
+        @Html.TextBoxFor(x => x.Uyesoyad, new { @class = "form-control" }) <br />
+        <label>Mail</label>
+        @Html.TextBoxFor(x => x.Uyemail, new { @class = "form-control" }) <br />
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.Uyekullanıcıadı, new { @class = "form-control" }) <br />
+        <div>
+            <label>Şifre</label>
+            @Html.TextBoxFor(x => x.Uyekullanıcısifre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Uyekullanıcısifre, "", new { @style = "color:red;" }) <br />
+        </div>
+        <label>Telefon</label>
+        @Html.TextBoxFor(x => x.Uyetelefon, new { @class = "form-control" }) <br />
+        <label>Okulu</label>
+        @Html.TextBoxFor(x => x.UyeOkul, new { @class = "form-control" }) <br />
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-primary" onclick="return confirm('İşlemini onaylıyor musun?')"
+                id="btnekle">
+            Üye Ekle
+        </button>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Personel Ekleme Sayfası</h2> 
+
+<form class="form-group" method="post">
+<div style="margin-top:20px;"></div>
+<div>
+    <label>Personel Adı</label>
+    <input type="text" class="form-control" name="Personeladsoyad" />
+    @Html.ValidationMessageFor(x=>x.PersonelAdSoyad,"",new {@style="color:red;"})
+</div>
+<div style="margin-top:20px;">
+    <button class="btn btn-primary" onclick="return confirm('İşlemini onaylıyor musun?')"
+            id="btnekle">
+        Personel Ekle
+    </button>
+</div>
+</form>

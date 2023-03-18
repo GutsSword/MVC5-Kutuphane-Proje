@@ -1,0 +1,23 @@
+﻿@using MVC5_Proje1.Models.Entity
+@model List<TBL_DUYURULAR>
+@{
+    ViewBag.Title = "Duyurular";
+    Layout = "~/Views/Shared/Layoutuye.cshtml";
+}
+
+<link href="~/webpanel/css/styles.css" rel="stylesheet" />
+<script src="~/webpanel/js/scripts.js"></script>
+
+<h2>Duyurular</h2>
+<table class="table table-hover">
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>
+                @Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")
+                <b><br /><a href="/Panelim/DuyuruDetay/@x.id" style="color:#363636">@x.Kategori</a></b>
+            </td>
+        </tr>
+    }
+</table>
+

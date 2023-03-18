@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm("AdminLogin", "Admin", FormMethod.Post))
+    {
+    <div style="margin-top:100px;margin-left:550px; height:200px;width:300px;text-align:center;">
+        <h3>Admin Girişi</h3>
+        <input type="text" name="Kullanici" class="form-control" placeholder="Kullanıcı Adı" /> <br />
+        <input type="text" name="Sifre" class="form-control" placeholder="Şifre" /> <br />
+        <button class="btn btn-primary form-control">Giriş</button>
+    </div>
+    }
+</body>
+</html>
+
+

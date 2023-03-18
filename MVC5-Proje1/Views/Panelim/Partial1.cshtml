@@ -1,0 +1,33 @@
+﻿@using MVC5_Proje1.Models.Entity
+@model List<TBL_DUYURULAR>
+
+@foreach (var x in Model)
+{
+    <div class="post">
+
+        <div class="user-block">
+
+            <img class="img-circle img-bordered-sm" src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png" alt="user image">
+
+            <span class="username">
+
+                <a href="#">@x.Kategori</a>
+
+                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+
+            </span>
+
+            <span class="description">Tarih - @Convert.ToDateTime( @x.Tarih ).ToString("dd/MM/yyyy") </span>
+
+        </div>
+
+        <!-- /.user-block -->
+
+        <p>
+            @x.icerik
+        </p>
+
+
+    </div>
+}
+

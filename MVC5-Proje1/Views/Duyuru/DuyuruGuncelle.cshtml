@@ -1,0 +1,27 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_DUYURULAR
+@{
+    ViewBag.Title = "DuyuruGuncelle";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Duyuru Güncelle</h2>
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyuru", FormMethod.Post))
+{
+    <div>
+        <div>
+            <label>Konu</label>
+            @Html.TextBoxFor(x => x.Kategori, new { @class = "form-control" }) <br />
+        </div>
+        <div>
+            <label>İçerik</label>
+            @Html.TextAreaFor(x => x.icerik, new { @class = "form-control" })<br />
+        </div>
+        <div>
+            <label>Tarih</label>
+            @Html.TextBoxFor(x=>x.Tarih , new { @class = "form-control" })<br />
+        </div>
+        <button class="btn btn-primary">Duyuruyu Güncelle</button>
+    </div>
+}
+

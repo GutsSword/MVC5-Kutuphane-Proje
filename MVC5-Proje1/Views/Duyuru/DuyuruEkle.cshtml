@@ -1,0 +1,25 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_DUYURULAR
+@{
+    ViewBag.Title = "DuyuruEkle";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Duyuru Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    <div>
+        <label>Konu</label>
+        @Html.TextBoxFor(k => k.Kategori, new { @class = "form-control" }) <br />
+    </div>
+    <div>
+        <label>İçerik</label>
+        @Html.TextBoxFor(k => k.icerik, new { @class = "form-control" }) <br />
+    </div>
+    <div>
+        <label>Tarih</label>
+        @Html.TextBoxFor(k => k.Tarih, new { @class = "form-control" }) <br />
+    </div>
+    <div>
+        <button class="btn btn-primary"> Duyuru EKle </button>
+    </div>
+</form>

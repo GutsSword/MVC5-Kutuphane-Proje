@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="620e745587fd47abb95503f68b1e7323" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="MV5_Proje1Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Cezalar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Kasa" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Kategori" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Kitap" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Uye" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Yazar" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Cezalar_TBL_Uye" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Kitap_TBL_Kategori" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Kitap_TBL_Yazar" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Hareket" Width="1.5" PointX="7" PointY="7.375" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Personel" Width="1.5" PointX="4.75" PointY="8" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Cezalar_TBL_Hareket" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Hareket_TBL_Kitap" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Hareket_TBL_Personel" />
+        <AssociationConnector Association="MV5_Proje1Model.FK_TBL_Hareket_TBL_Uye" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Hakkımızda" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_ILETISIM" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Mesajlar" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_DUYURULAR" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="MV5_Proje1Model.TBL_Admin" Width="1.5" PointX="9.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

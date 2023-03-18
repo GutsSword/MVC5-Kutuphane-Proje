@@ -1,0 +1,25 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Yazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Yazar Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <div>
+            <label>Yazar Adı</label>
+            @Html.TextBoxFor(x => x.yazarad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.yazarad) <br />
+        </div>
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(x => x.yazarsoyad, new { @class = "form-control" }) <br />
+        <label>Yazar Hakkında Detay</label>
+        @Html.TextAreaFor(x => x.yazardetay, new { @class = "form-control" }) <br />
+    </div>
+    <div>
+        <button class="btn btn-primary">Yazar Ekle</button>
+    </div>
+
+</form>

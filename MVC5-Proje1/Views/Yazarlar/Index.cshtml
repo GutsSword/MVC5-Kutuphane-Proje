@@ -1,0 +1,35 @@
+﻿@using MVC5_Proje1.Models.Entity
+@model List<TBL_Yazar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Yazar Tablosu</h2>
+<br />
+<table class="table table-hover">
+    <tr style="background-color:rgb(207, 207, 207)">
+        <th>Yazar ID</th>
+        <th>Yazar ADI</th>
+        <th>YAZAR SOYADI</th>
+        <th>Detay</th>
+        <th></th>
+        <th></th>
+        <th>Yazarın Kitapları</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Yazarid</td>
+            <td>@x.yazarad</td>
+            <td>@x.yazarsoyad</td>
+            <td>@x.yazardetay</td>
+            <td>@Html.ActionLink("Sil", "YazarSil", new { id = x.Yazarid }, new { @class = "btn btn-danger", onclick = "return confirm('SİLMEK İSTEDİĞİNE EMİN MİSİN?')" }) </td>
+            <td><a href="/Yazarlar/YazarGetir/@x.Yazarid" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Yazarlar/YazarKitap/@x.Yazarid" class="btn btn-warning">Kitaplar</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Yazarlar/Yazarekle/" class="btn btn-default" style="color:white; background-color:darkslategrey">Yeni Yazar Ekle</a>

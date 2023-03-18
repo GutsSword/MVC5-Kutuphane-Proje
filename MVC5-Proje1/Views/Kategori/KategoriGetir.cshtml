@@ -1,0 +1,21 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        <div style="margin-top:20px;"></div>
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Ad)
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-primary" id="btn">Güncelle</button>
+    </div>
+}
+

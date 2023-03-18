@@ -1,0 +1,32 @@
+﻿@model MVC5_Proje1.Models.Entity.TBL_Kitap
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Kitap Ekleme Sayfası</h2> <br />
+
+<form class="form-group" method="post">
+    <div>
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Kitapad, new { @class = "form-control" })
+        <br />
+        <label>Kitap Kategorisi</label>
+        @Html.DropDownListFor(x => x.TBL_Kategori.Kategoriid, (List<SelectListItem>)ViewBag.k, new { @class = "form-control" })
+        <br />
+        <label>Kitap Yazarı</label>
+        @Html.DropDownListFor(x => x.TBL_Yazar.Yazarid, (List<SelectListItem>)ViewBag.yazar, new { @class = "form-control" })
+        <br />
+        <label>Kitap Basımyılı</label>
+        @Html.TextBoxFor(x => x.Basımyıl, new { @class = "form-control" })
+        <br />
+        <label>Kitap Yayınevi</label>
+        @Html.TextBoxFor(x => x.Yayınevi, new { @class = "form-control" })
+        <br />
+        <label>Kitap Sayfası</label>
+        @Html.TextBoxFor(x => x.Kitapsayfa, new { @class = "form-control" })
+        <br />
+    </div>
+    <button class="btn btn-primary">Kitabı Ekle</button>
+ 
+</form>

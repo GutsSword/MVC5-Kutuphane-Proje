@@ -1,0 +1,26 @@
+﻿@using MVC5_Proje1.Models.Entity
+@model List<TBL_Hareket>
+@{
+    ViewBag.Title = "UyeGecmis";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>@ViewBag.d2</h2>
+
+<table class="table table-danger">
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+    <tr>
+        <td>@x.TBL_Kitap.Kitapad</td>
+        <td>@x.TBL_Personel.PersonelAdSoyad</td>
+        <td>@Convert.ToDateTime(x.AlısTarihi).ToString("dd.MM.yyyy")</td>
+        <td>@Convert.ToDateTime(x.uyegetirtarih).ToString("dd.MM.yyyy")</td>
+    </tr>
+    }
+</table>
